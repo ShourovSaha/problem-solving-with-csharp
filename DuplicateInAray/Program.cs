@@ -11,7 +11,7 @@ namespace DuplicateInAray
         static void Main(string[] args)
         {
             int[] array = { 0, 2, 1, 3, 2};
-
+            
             PrintDuplicateNumber(array);
 
             Console.Read();
