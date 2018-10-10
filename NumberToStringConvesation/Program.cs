@@ -10,89 +10,68 @@ namespace NumberToStringConvesation
     {
         static void Main(string[] args)
         {
-            //int num = int.Parse(Console.ReadLine());
-            int num = 3421;
-            Console.WriteLine("=" + num);
+            int num = int.Parse(Console.ReadLine());
             
+            Console.WriteLine("=" + num);
+
             int[] arr = SaperateNumberFromInput(num);
+            DisplayinStringFormate(arr);
 
-            Dispalay(arr);
-            //DisplayinStringFormate(arr);
 
-            //int length = arr.Length;
+            //int num = 3421;
+            //Dispalay(arr);
 
-            //Console.WriteLine("=====");
 
-            //for (int i = 0; i < length; i++)
-            //{
-            //    Console.Write(arr[i]);
-            //}
             Console.ReadKey();
         }
 
-        static void Dispalay(int[] arr)
-        {
-            string str = null;
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if ( i == 0 )
-                {
-                    str += SelectNumber(arr[i]) + "-ty thousand and ";
-                }
-                else if(i == 1)
-                {
-                    str += SelectNumber(arr[i]) + " hurndred and ";
-                }
-
-                else if (i == 2)
-                {
-                    str += SelectNumber(arr[i]) + "-ty ";
-                }
-                else
-                {
-                    str += SelectNumber(arr[i]);
-                }
-            }
-            Console.WriteLine("========================");
-            Console.WriteLine(str);
-            Console.WriteLine("=========================");
-        }
-
-        static void DisplayinStringFormate(int[] arr)
+        static void DisplayinStringFormate(int[] arr)//display for dynamic input
         {
             int length = arr.Length;
 
             string formate = null;
 
-            for (int i = 0; i < length; i++)
+            switch (length)
             {
-                switch (length)
-                {
-                    case 1:
-                         formate = SelectNumber(arr[i]);
-                        break;
+                case 1:
+                    formate += SelectNumber(arr[0]);
+                    Console.WriteLine(formate);
+                    break;
 
-                    case 2:
-                        formate += SelectNumber(arr[i]) + " ";
-                        break;
+                case 2:
+                    DispalayForDoshok(arr);
+                    break;
 
-                    case 3:
-                        break;
+                case 3:
+                    DispalayForHurndred(arr);
+                    break;
 
-                    case 4:
-                        break;
+                case 4:
+                    DispalayForThousand(arr);
+                    break;
 
-                    default:
-                        Console.WriteLine("Undefined!");
-                        break;
+                case 5:
+                    DispalayForOjut(arr);
+                    break;
 
-                }
+                case 6:
+                    DispalayForLak(arr);
+                    break;
 
-                Console.Write(arr[i]);
+                case 7:
+                    DispalayForNijut(arr);
+                    break;
+
+                case 8:
+                    DispalayForCror(arr);
+                    break;
+
+                default:
+                    Console.WriteLine("Undefined!");
+                    break;
+
             }
         }
-
 
         static string SelectNumber(int num)
         {
@@ -146,7 +125,7 @@ namespace NumberToStringConvesation
                 vagSesh = num % 10;
                 arr[i] = vagSesh;
                 ++i;
-                num = num / 10; 
+                num = num / 10;
             }
 
             int[] arr2 = new int[i];
@@ -157,8 +136,372 @@ namespace NumberToStringConvesation
             {
                 arr2[t++] = arr[j];
             }
-            
+
             return arr2;
+        }
+
+        static string SelectNumberDifferenrNumberSpalling(int num)
+        {
+            string str = null;
+            switch (num)
+            {
+                case 2:
+                    str = "twen";
+                    break;
+                case 3:
+                    str = "thir";
+                    break;
+                case 4:
+                    str = "for";
+                    break;
+                case 5:
+                    str = "fif";
+                    break;
+                case 8:
+                    str = "eigh";
+                    break;
+                default:
+                    break;
+            }
+            return str;
+        }
+
+        static void DispalayForDoshok(int[] arr)
+        {
+            string str = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                    
+                }
+                else if (i == 1)
+                {
+                    str += SelectNumber(arr[i]);
+                }
+            }
+            Console.WriteLine("========================");
+            Console.WriteLine(str);
+            Console.WriteLine("=========================");
+        }
+
+
+        static void DispalayForHurndred(int[] arr)
+        {
+            string str = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    str += SelectNumber(arr[i]) + " hurndred and ";
+                }
+                else if (i == 1)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 2)
+                {
+                    str += SelectNumber(arr[i]);
+                }
+            }
+            Console.WriteLine("========================");
+            Console.WriteLine(str);
+            Console.WriteLine("=========================");
+        }
+
+        static void DispalayForThousand(int[] arr)
+        {
+            string str = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    str += SelectNumber(arr[i]) + " thousand and ";
+                }
+                else if (i == 1)
+                {
+                    str += SelectNumber(arr[i]) + " hurndred and ";
+                }
+
+                else if (i == 2)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+                else
+                {
+                    str += SelectNumber(arr[i]);
+                }
+            }
+            Console.WriteLine("========================");
+            Console.WriteLine(str);
+            Console.WriteLine("=========================");
+        }
+
+        static void DispalayForOjut(int[] arr)
+        {
+            string str = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+                else if (i == 1)
+                {
+                    str += SelectNumber(arr[i]) + " thousand and ";
+                }
+
+                else if (i == 2)
+                {
+                    str += SelectNumber(arr[i]) + " hurndred and ";
+                }
+
+                else if (i == 3)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 4)
+                {
+                    str += SelectNumber(arr[i]);
+                }
+            }
+            Console.WriteLine("========================");
+            Console.WriteLine(str);
+            Console.WriteLine("=========================");
+        }
+
+        static void DispalayForLak(int[] arr)
+        {
+            string str = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    str += SelectNumber(arr[i]) + " lak";
+                }
+                else if (i == 1)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 2)
+                {
+                    str += SelectNumber(arr[i]) + " thousand and ";
+                }
+
+                else if (i == 3)
+                {
+                    str += SelectNumber(arr[i]) + " hurndred and ";
+                }
+
+                else if (i == 4)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 5)
+                {
+                    str += SelectNumber(arr[i]);
+                }
+            }
+            Console.WriteLine("========================");
+            Console.WriteLine(str);
+            Console.WriteLine("=========================");
+        }
+
+        static void DispalayForNijut(int[] arr)
+        {
+            string str = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+                else if (i == 1)
+                {
+                    str += SelectNumber(arr[i]) + " lak and ";
+                }
+
+                else if (i == 2)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 3)
+                {
+                    str += SelectNumber(arr[i]) + " thousand and";
+                }
+
+                else if (i == 4)
+                {
+                    str += SelectNumber(arr[i]) + " hurndred and ";
+                }
+
+                else if (i == 5)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 6)
+                {
+                    str += SelectNumber(arr[i]);
+                }
+            }
+            Console.WriteLine("========================");
+            Console.WriteLine(str);
+            Console.WriteLine("=========================");
+        }
+
+
+        static void DispalayForCror(int[] arr)
+        {
+            string str = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    str += SelectNumber(arr[i]) + " cror and ";
+                }
+                else if (i == 1)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 2)
+                {
+                    str += SelectNumber(arr[i]) + " lak and ";
+                }
+
+                else if (i == 3)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 4)
+                {
+                    str += SelectNumber(arr[i]) + " thousand and ";
+                }
+
+                else if (i == 5)
+                {
+                    str += SelectNumber(arr[i]) + " hurndred and ";
+                }
+
+                else if (i == 6)
+                {
+                    if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
+                    {
+                        str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else
+                    {
+                        str += SelectNumber(arr[i]) + "ty ";
+                    }
+                }
+
+                else if (i == 7)
+                {
+                    str += SelectNumber(arr[i]);
+                }
+            }
+            Console.WriteLine("========================");
+            Console.WriteLine(str);
+            Console.WriteLine("=========================");
         }
     }
 }
