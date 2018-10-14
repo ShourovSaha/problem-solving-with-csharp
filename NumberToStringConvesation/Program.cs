@@ -248,6 +248,10 @@ namespace NumberToStringConvesation
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
                     }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
+                    }
                     else
                     {
                         str += SelectNumber(arr[i]) + "ty ";
@@ -275,6 +279,10 @@ namespace NumberToStringConvesation
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
                     }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
+                    }
                     else
                     {
                         str += SelectNumber(arr[i]) + "ty ";
@@ -295,6 +303,10 @@ namespace NumberToStringConvesation
                     if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
                     }
                     else
                     {
@@ -320,13 +332,17 @@ namespace NumberToStringConvesation
             {
                 if (i == 0)
                 {
-                    str += SelectNumber(arr[i]) + " lak";
+                    str += SelectNumber(arr[i]) + " lak ";
                 }
                 else if (i == 1)
                 {
                     if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
                     }
                     else
                     {
@@ -349,6 +365,10 @@ namespace NumberToStringConvesation
                     if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
                     }
                     else
                     {
@@ -378,6 +398,10 @@ namespace NumberToStringConvesation
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
                     }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
+                    }
                     else
                     {
                         str += SelectNumber(arr[i]) + "ty ";
@@ -393,6 +417,10 @@ namespace NumberToStringConvesation
                     if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
                     }
                     else
                     {
@@ -415,6 +443,10 @@ namespace NumberToStringConvesation
                     if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
                     }
                     else
                     {
@@ -449,6 +481,10 @@ namespace NumberToStringConvesation
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
                     }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
+                    }
                     else
                     {
                         str += SelectNumber(arr[i]) + "ty ";
@@ -465,6 +501,10 @@ namespace NumberToStringConvesation
                     if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
                     }
                     else
                     {
@@ -487,6 +527,10 @@ namespace NumberToStringConvesation
                     if (arr[i] == 2 || arr[i] == 3 || arr[i] == 4 || arr[i] == 5 || arr[i] == 8)
                     {
                         str += SelectNumberDifferenrNumberSpalling(arr[i]) + "ty ";
+                    }
+                    else if (arr[i] == 1)
+                    {
+                        str += SelectNumber(arr[i]);
                     }
                     else
                     {
