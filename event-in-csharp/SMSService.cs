@@ -11,9 +11,11 @@ namespace event_in_csharp
     /// </summary>
     public class SMSService
     {
-        public void OnMessageLogged(object sender, EventArgs args)
+        public void OnMessageLogged(object sender, LoggerEventArgs args)
         {
             Console.WriteLine("SMS send starts...");
+            Console.WriteLine("SMS body: \n Message:" + args.Message
+                                + "\n Request-Time :" + args.RequestTime);
             Thread.Sleep(3000);
             Console.WriteLine("SMS send ends...");
         }

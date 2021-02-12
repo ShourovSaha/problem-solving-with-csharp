@@ -6,21 +6,38 @@ namespace event_in_csharp
     {
         static void Main(string[] args)
         {
-            Logger logger = new Logger();// Publisher class
+            try
+            {
+                int[] arrays = new int[3];
+                arrays[4] = 100;
+
+                Console.WriteLine("Process end.");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                errorLogging(new LoggerEventArgs()
+                {
+                    Message = ex.Message,
+                    RequestTime = DateTime.Now
+                });
+            }
+        }
+
+        private static void errorLogging(LoggerEventArgs eventArgs)
+        {
+            Logger logger = new Logger(eventArgs);// Publisher class
             MailService mailService = new MailService();// Subscriber class
             SMSService smsService = new SMSService();// Subscriber class
 
             #region Service obj subscribes to logger publisher obj.
 
-            logger.ErrorLoggingEvent += mailService.OnMessageLogged;
-            logger.ErrorLoggingEvent += smsService.OnMessageLogged;
+            logger.LoggingEventHandeler += mailService.OnMessageLogged;
+            logger.LoggingEventHandeler += smsService.OnMessageLogged;
 
             #endregion
 
-            logger.WriteLog("An obj referrence error encounterd!");
-
-            Console.WriteLine("Process end.");
-            Console.ReadKey();
+            logger.WriteLog();
         }
     }
 }

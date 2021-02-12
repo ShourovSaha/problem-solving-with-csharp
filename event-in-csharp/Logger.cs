@@ -11,22 +11,24 @@ namespace event_in_csharp
     /// </summary>
     public class Logger
     {
-        public delegate void LoggingEventHandeler(object sender, EventArgs args);
-
-        public event LoggingEventHandeler ErrorLoggingEvent = null;
-
-        public void WriteLog(string message)
+        public EventHandler<LoggerEventArgs> LoggingEventHandeler = null;
+        private readonly LoggerEventArgs _loggerEventArgs;
+        public Logger(LoggerEventArgs args)
         {
-            Console.WriteLine("Error message: " + message);
-            OnErrorMessageLogged();
+            _loggerEventArgs = args;
         }
 
-        protected virtual void OnErrorMessageLogged()
+        public void WriteLog()
         {
-            //if (ErrorLoggingEvent != null)
-            //    ErrorLoggingEvent(this, EventArgs.Empty);
+            Console.WriteLine("Error message: " + _loggerEventArgs.Message
+                                + ", Error occured at: " + _loggerEventArgs.RequestTime
+                                + "\n\n");
+            OnErrorMessageLogged(_loggerEventArgs);
+        }
 
-            ErrorLoggingEvent?.Invoke(this, EventArgs.Empty);
+        protected virtual void OnErrorMessageLogged(LoggerEventArgs args)
+        {
+            LoggingEventHandeler?.Invoke(this, args);
         }
     }
 }
