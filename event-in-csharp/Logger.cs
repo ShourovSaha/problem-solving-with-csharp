@@ -18,11 +18,10 @@ namespace event_in_csharp
         public void WriteLog(string message)
         {
             Console.WriteLine("Error message: " + message);
-            Thread.Sleep(2000);
-            OnMessageLogged();
+            OnErrorMessageLogged();
         }
 
-        protected virtual void OnMessageLogged()
+        protected virtual void OnErrorMessageLogged()
         {
             //if (ErrorLoggingEvent != null)
             //    ErrorLoggingEvent(this, EventArgs.Empty);

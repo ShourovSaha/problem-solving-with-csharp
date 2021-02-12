@@ -7,15 +7,15 @@ namespace event_in_csharp
 {
     /// <summary>
     /// Subscriber class.
-    /// The responsibility of this class is to send mail.
+    /// The responsibility of this class is to send SMS.
     /// </summary>
-    public class MailService
+    public class SMSService
     {
         public void OnMessageLogged(object sender, EventArgs args)
         {
-            Console.WriteLine("Mail send starts...");
+            Console.WriteLine("SMS send starts...");
             Thread.Sleep(3000);
-            Console.WriteLine("Mail send ends...");
+            Console.WriteLine("SMS send ends...");
         }
     }
 }
