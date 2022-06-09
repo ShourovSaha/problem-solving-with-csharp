@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseSring1", "ReverseSring1\ReverseSring1.csproj", "{3A03E550-8E66-4428-8615-940F244CBBD4}"
 EndProject
@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FibonachiSeriesByRecursion"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseStingByRecoursion", "ReverseStingByRecoursion\ReverseStingByRecoursion.csproj", "{33BBEE58-F46C-4A67-A10C-078E5C1F6A4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "event-in-csharp", "event-in-csharp\event-in-csharp.csproj", "{5972D1A5-C785-44B0-804C-EAB60ED30A02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "event-in-csharp", "event-in-csharp\event-in-csharp.csproj", "{5972D1A5-C785-44B0-804C-EAB60ED30A02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "subarray_with_given_sum", "subarray_with_given_sum\subarray_with_given_sum.csproj", "{4DEB5037-4D1C-410F-9C46-47D9F00DD69E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{5972D1A5-C785-44B0-804C-EAB60ED30A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5972D1A5-C785-44B0-804C-EAB60ED30A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5972D1A5-C785-44B0-804C-EAB60ED30A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DEB5037-4D1C-410F-9C46-47D9F00DD69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DEB5037-4D1C-410F-9C46-47D9F00DD69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DEB5037-4D1C-410F-9C46-47D9F00DD69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DEB5037-4D1C-410F-9C46-47D9F00DD69E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
